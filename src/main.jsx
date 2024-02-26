@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/" element={<MovieGrid />} />
           <Route path="/movieDetail/:id" element={<MovieDetails />} />
           <Route path="/movieSearch/:searchQuery" element={<MovieSearch />} />
-          <Route path="/buyTicket/:title" element={<Buy />} />
+          <Route path="/buyTicket/:title/:id" element={<Buy />} />
           <Route path="/films" element={<Films />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/tickets" element={<Tickets />} />

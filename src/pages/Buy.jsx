@@ -7,6 +7,7 @@ import { setTickets } from '../slices/ticketSlice';
 
 function Buy() {
     const { title } = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -30,6 +31,7 @@ function Buy() {
             butaca: butaca,
             ticket: ticket,
             title: title,
+            id: id,
         };
 
         dispatch(setTickets(formularioData));

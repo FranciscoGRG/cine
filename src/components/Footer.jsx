@@ -4,8 +4,8 @@ import React from 'react';
 function Footer() {
     return (
         <div className='pt-56'>
-            <footer className="bg-[#f0d3d1] text-white py-2" id='footer'>
-                <div className="container text-black">
+            <footer id='footer'>
+                <div className="container text-white">
                     <div className="flex flex-wrap">
                         <div className=" ml-[15%]">
                             <h1 className="mb-4 text-2xl">Contacto</h1>
