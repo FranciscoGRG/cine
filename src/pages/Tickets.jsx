@@ -1,8 +1,14 @@
 import React from 'react';
 import { GetTickets } from '../js/script';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Tickets() {
     const tickets = GetTickets();
+
+    //Aqui recojo los tickets y los muestro, solo los muestro en console.log porque ya los tengo con el almacenamiento local
+    const tickets2 = useSelector((state) => state.tickets.tickets);
+    console.log("Tiket Email: " + tickets2.email + ", Ticket Tittle: " + tickets2.title)
+
 
     return (
         <div className="max-w-xl mx-auto my-8">
@@ -11,8 +17,7 @@ function Tickets() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {tickets.map((ticket, index) => (
                         <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                            <h2 className="text-gray-600 mb-2">Peli: {ticket.ticket}</h2>
-                            <p className="text-gray-600 mb-2">Nombre: {ticket.nombre}</p>
+                            <p className="text-gray-600 mb-2">Nombre: {ticket.title}</p>
                             <p className="text-gray-600 mb-2">Fila: {ticket.fila}</p>
                             <p className="text-gray-600 mb-2">Hora: {ticket.hora}</p>
                         </div>

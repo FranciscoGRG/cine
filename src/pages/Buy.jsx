@@ -1,9 +1,14 @@
 import { useParams, useNavigate  } from "react-router-dom";
 import { AddTicket } from '../js/script'
 
+import { useDispatch } from 'react-redux';
+
+import { setTickets } from '../slices/ticketSlice';
+
 function Buy() {
     const { title } = useParams();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const envioFormulario = (event) => {
         event.preventDefault()
@@ -23,8 +28,11 @@ function Buy() {
             fila: fila,
             hora: hora,
             butaca: butaca,
-            ticket: ticket
+            ticket: ticket,
+            title: title,
         };
+
+        dispatch(setTickets(formularioData));
 
         AddTicket(formularioData)
         navigate('/');
